@@ -1,0 +1,148 @@
+/* Bento Grid Theme Styling */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --ion-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Bento Theme Colors */
+  --bento-bg: #F1F5F9;
+  --bento-card-bg: #FFFFFF;
+  --bento-border: #E2E8F0;
+  --bento-text-main: #0F172A;
+  --bento-text-muted: #64748B;
+  --bento-primary: #4F46E5; /* Indigo 600 */
+  --bento-primary-soft: #EEF2FF;
+  
+  --ion-color-primary: var(--bento-primary);
+  --ion-color-primary-rgb: 79, 70, 229;
+  --ion-background-color: var(--bento-bg);
+  --ion-item-background: transparent;
+}
+
+body {
+  background-color: var(--bento-bg);
+  color: var(--bento-text-main);
+}
+
+/* Bento Card Style */
+.bento-card {
+  background: var(--bento-card-bg);
+  border-radius: 20px;
+  border: 1px solid var(--bento-border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  margin-bottom: 16px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
+}
+
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Header & Typography */
+ion-toolbar {
+  --background: var(--bento-bg);
+  --border-width: 0;
+  padding: 10px 20px;
+}
+
+ion-title {
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  font-size: 1.25rem;
+  color: var(--bento-text-main);
+}
+
+h1, h2, h3 {
+  color: var(--bento-text-main);
+  font-weight: 700;
+  margin-top: 0;
+  letter-spacing: -0.01em;
+}
+
+p {
+  color: var(--bento-text-muted);
+  line-height: 1.6;
+}
+
+/* Socket Log / Code Style */
+.socket-log {
+  background: #0F172A;
+  border-radius: 12px;
+  padding: 1.25rem;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11px;
+  color: #10B981;
+  overflow-y: auto;
+  line-height: 1.4;
+}
+
+/* UI Elements */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  background: white;
+  border: 1px solid var(--bento-border);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--bento-text-muted);
+}
+
+.status-dot {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.status-dot.online { background: #10B981; }
+.status-dot.alert { background: #F59E0B; }
+
+ion-searchbar {
+  --background: white;
+  --border-radius: 12px;
+  --box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+ion-button {
+  --border-radius: 12px;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* Grid Adjustments */
+ion-grid {
+  --ion-grid-column-padding: 12px;
+  padding: 24px;
+}
+
+/* Utility */
+.text-indigo { color: var(--bento-primary); }
+.bg-indigo-soft { background-color: var(--bento-primary-soft); }
+
+/* Responsive visibility utilities */
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  ion-grid { padding: 16px; }
+}
